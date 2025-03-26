@@ -25,7 +25,7 @@ jobs:
         run: pip install bandit==1.7.5
 
       - name: Run Bandit Security Scan
-        run: bandit -r . -f json -o results.json
+        run: bandit -r . -f json -o results.json --exit-zero
 
       - name: Verify json
         run: |
